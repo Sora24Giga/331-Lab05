@@ -7,15 +7,15 @@ const { message } = storeToRefs(store)
 </script>
 
 <template>
-  <header>
-    <div id="flashMessage" v-if="message">
-    <h4>{{ message }}</h4>
+  <header class="max-h-screen leading-normal">
+    <div id="flashMessage" v-if="message" class="animate-yellowfade">
+    <h4 class="text-lg">{{ message }}</h4>
     </div>
-    <nav>
-      <RouterLink :to="{name: 'EventList'}">Home</RouterLink>
-      <RouterLink :to="{name: 'about'}">About</RouterLink>
-      <RouterLink :to="{name: 'Component'}">Component</RouterLink>
-      <RouterLink :to="{name: 'Student'}">Student</RouterLink>
+    <nav class="p-8">
+      <RouterLink :to="{name: 'EventList'}" class="font-bold text-gray-700 hover:text-green-500 m-4">Home</RouterLink>
+      <RouterLink :to="{name: 'about'}" class="font-bold text-gray-700 hover:text-green-500 m-4">About</RouterLink>
+      <RouterLink :to="{name: 'Component'}" class="font-bold text-gray-700 hover:text-green-500 m-4">Component</RouterLink>
+      <RouterLink :to="{name: 'Student'}" class="font-bold text-gray-700 hover:text-green-500 m-4">Student</RouterLink>
     </nav>
   </header>
 
@@ -30,32 +30,6 @@ const { message } = storeToRefs(store)
   text-align: center;
   color: #2c3e50;
 }
-nav {
-  padding: 30px;
-}
-
-nav a {
-  front-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-h4 {
-  front-size: 20px;
-}
 
 @keyframes yellowfade {
   from {
@@ -66,7 +40,7 @@ h4 {
   }
 }
 
-#flashMessage {
+.animate-yellowfade {
   animation: yellowfade 3s ease-in-out
 }
 </style>

@@ -10,6 +10,7 @@ const { message } = storeToRefs(store)
   <header class="max-h-screen leading-normal">
     <div id="flashMessage" v-if="message" class="animate-yellowfade">
     <h4 class="text-lg">{{ message }}</h4>
+    <h1>SORA</h1>
     </div>
     <nav class="p-8">
       <RouterLink :to="{name: 'EventList'}" class="font-bold text-gray-700 hover:text-green-500 m-4">Home</RouterLink>
